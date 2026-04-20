@@ -3,31 +3,53 @@
 <head>
 <meta charset="utf-8">
 <title>The Bobs: A Self-Guided Robert Moses Tour of New York</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-  @page { size: letter; margin: 0.65in 0.7in; }
-  body { font-family: Georgia, 'Times New Roman', serif; font-size: 10.5pt; line-height: 1.35; color: #1a1a1a; }
-  h1 { font-size: 20pt; margin: 0 0 2pt 0; color: #111; }
-  h1 + .sub { font-size: 10pt; color: #555; font-style: italic; margin-bottom: 16pt; }
-  h2 { font-size: 13pt; color: #6b0f0f; margin: 14pt 0 3pt 0; border-bottom: 1px solid #c9b8b8; padding-bottom: 2pt; }
-  h3 { font-size: 10.5pt; margin: 8pt 0 3pt 0; color: #333; text-transform: uppercase; letter-spacing: 0.4pt; }
-  p { margin: 4pt 0; }
-  ul { margin: 4pt 0 4pt 16pt; padding-left: 0; }
-  li { margin-bottom: 3pt; }
-  .intro { font-size: 10pt; color: #333; border-left: 3px solid #6b0f0f; padding: 4pt 10pt; background: #faf4f4; margin: 6pt 0 12pt 0; }
-  .stop { margin-bottom: 10pt; }
-  .meta { font-size: 9.5pt; color: #555; margin: 2pt 0; }
-  .meta a { color: #2a4d8f; text-decoration: none; }
+  :root { --accent: #6b0f0f; --link: #2a4d8f; --text: #1a1a1a; --muted: #555; --rule: #c9b8b8; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #f7f4ef; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: var(--text);
+    line-height: 1.55;
+    font-size: 17px;
+    -webkit-text-size-adjust: 100%;
+  }
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 28px 22px 60px;
+    background: #fffdf8;
+    box-shadow: 0 0 30px rgba(0,0,0,0.05);
+    min-height: 100vh;
+  }
+  @media (min-width: 780px) {
+    .wrap { padding: 44px 56px 72px; }
+  }
+  h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 6px 0; color: #111; }
+  h1 + .sub { font-size: 0.95rem; color: var(--muted); font-style: italic; margin: 0 0 24px 0; }
+  h2 { font-size: 1.25rem; color: var(--accent); margin: 32px 0 8px 0; padding-bottom: 4px; border-bottom: 1px solid var(--rule); line-height: 1.3; }
+  p { margin: 10px 0; }
+  a { color: var(--link); word-break: break-word; }
+  a:hover { text-decoration: underline; }
+  .intro { font-size: 0.97rem; color: #333; border-left: 3px solid var(--accent); padding: 10px 14px; background: #faf4f4; margin: 8px 0 20px 0; border-radius: 2px; }
+  .meta { font-size: 0.92rem; color: var(--muted); margin: 4px 0; }
+  .meta a { color: var(--link); text-decoration: none; }
   .meta a:hover { text-decoration: underline; }
-  .transit { font-size: 9pt; color: #444; background: #f3f3f3; padding: 4pt 8pt; border-radius: 3px; margin: 5pt 0 10pt 0; }
-  .transit strong { color: #222; }
-  blockquote { font-size: 9.5pt; margin: 4pt 0 4pt 10pt; padding: 2pt 0 2pt 10pt; border-left: 2px solid #999; color: #333; font-style: italic; }
-  .pageref { font-size: 9pt; color: #666; }
-  .logistics { font-size: 9.5pt; background: #f6f1e8; padding: 6pt 10pt; border-radius: 3px; margin: 12pt 0; }
-  .signature { font-size: 9pt; color: #888; margin-top: 16pt; text-align: right; border-top: 1px solid #ddd; padding-top: 4pt; }
-  a { color: #2a4d8f; }
+  .transit { font-size: 0.92rem; color: #333; background: #eef2f6; padding: 10px 14px; border-radius: 4px; margin: 14px 0 24px 0; border-left: 3px solid #6b8cbd; }
+  .transit strong { color: #1a1a1a; }
+  blockquote { font-size: 0.95rem; margin: 10px 0 10px 4px; padding: 4px 0 4px 14px; border-left: 3px solid #bbb; color: #333; font-style: italic; }
+  .pageref { font-size: 0.9rem; color: #666; margin: 6px 0; }
+  .logistics { font-size: 0.94rem; background: #f6f1e8; padding: 14px 16px; border-radius: 4px; margin: 28px 0 16px 0; border-left: 3px solid #b89758; }
+  .signature { font-size: 0.85rem; color: #888; margin-top: 30px; text-align: right; border-top: 1px solid #ddd; padding-top: 10px; }
+  @media print {
+    html, body { background: #fff; }
+    .wrap { box-shadow: none; max-width: none; padding: 0.5in 0.6in; }
+  }
 </style>
 </head>
 <body>
+<div class="wrap">
 
 <h1>The Bobs: Moses, Caro, and the Tour of New York</h1>
 <div class="sub">A self-guided one-day tour of Robert Moses's New York, drawn from Robert Caro's <em>The Power Broker</em>. All page references below are to <em>The Power Broker</em> (1974).</div>
@@ -116,6 +138,6 @@ The tour runs Bronx &rarr; Manhattan &rarr; Randall's Island &rarr; Queens &rarr
 </div>
 
 <div class="signature">Prepared by Spencer Reed &mdash; adapted from tour notes, August 2024.</div>
-
+</div>
 </body>
 </html>
